@@ -9,16 +9,16 @@ import {
   useState,
 } from 'react';
 import Fuse from 'fuse.js';
-import { useRequestSearchQuery } from './hooks/use-request-search-query';
+import {useRequestSearchQuery} from './hooks/use-request-search-query';
 
 export interface SearchBoxProps
   extends DetailedHTMLProps<
     InputHTMLAttributes<HTMLInputElement>,
     HTMLInputElement
   > {
-  dataSource: Array<object>;
+  dataSource: Array<any>;
   searchKeys: Array<string>;
-  resultSetter?: Dispatch<SetStateAction<Array<object>>>;
+  resultSetter?: Dispatch<SetStateAction<Array<any>>>;
 }
 
 export function SearchBox({

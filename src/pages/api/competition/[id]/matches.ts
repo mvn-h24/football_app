@@ -1,14 +1,14 @@
-import { AppError, MatchesList } from '@football-app/types';
-import { AxiosError } from 'axios';
-import { NextApiRequest, NextApiResponse } from 'next';
-import { fetchCompetitionMatches } from '@football-app/app/api-client';
+import {AppError, MatchesList} from '@football-app/types';
+import {AxiosError} from 'axios';
+import {NextApiRequest, NextApiResponse} from 'next';
+import {fetchCompetitionMatches} from '@football-app/app/api-client';
 
 const endpoint = (
   req: NextApiRequest,
   res: NextApiResponse<MatchesList | AppError>
 ) =>
   fetchCompetitionMatches(
-    Array.isArray(req.query.id) ? req.query.id[0] : req.query.id
+    (Array.isArray(req.query.id) ? req.query.id[0] : req.query.id)??''
   )
     .then((apiResponse) => {
       if (apiResponse.status === 200) {
@@ -23,8 +23,9 @@ const endpoint = (
     })
     .catch((reason: AxiosError) =>
       res.status(500).json({
-        status: reason.response.status,
-        description: reason.response.data.message,
+        status: reason.response?.status ?? 400,
+            //@ts-ignore
+          description: reason.response?.data?.message ?? 'Error occurred',
       })
     );
 
