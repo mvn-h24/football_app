@@ -1,8 +1,9 @@
 /** @type {import('postcss-load-config').Config} */
 const config = {
-  plugins: {
-    tailwindcss: {},
-  },
+    plugins: {
+        'postcss-viewport-height-correction': {},
+        tailwindcss: {},
+    },
 };
 
 export default config;
