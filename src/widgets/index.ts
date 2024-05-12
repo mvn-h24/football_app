@@ -3,3 +3,4 @@ export * from "./TeamInfo";
 export * from "./CompetitionInfo";
 export * from "./MatchesCalendar";
 export * from "./CompetitionDetailModal";
+export { ResourceListingLayout } from "./ResourceListingLayout";

@@ -1,6 +1,5 @@
-import { ReactNode, Suspense } from "react";
-import { ContentLayout, ScrollLayout } from "@football-app/shared/ui";
-import { SearchBox } from "@football-app/features";
+import { ReactNode } from "react";
+import { DashboardResourceLayout } from "@football-app/widgets/DashboardResourceLayout";
 
 export default function CompetitionsLayout({
   children,
@@ -8,14 +7,11 @@ export default function CompetitionsLayout({
   children: ReactNode;
 }) {
   return (
-    <ContentLayout className="overflow-hidden flex flex-col">
-      <h2 className="profile-heading">Соревнование</h2>
-      <Suspense>
-        <SearchBox className="mt-3" searchParamName="competition" />
-      </Suspense>
-      <ScrollLayout className="overflow-hidden mt-5 flex-grow">
-        {children}
-      </ScrollLayout>
-    </ContentLayout>
+    <DashboardResourceLayout
+      resourceName="Соревнование"
+      searchName="competition"
+    >
+      {children}
+    </DashboardResourceLayout>
   );
 }

@@ -1,8 +1,7 @@
 import Fuse from "fuse.js";
-import { SearchBox, TeamsListView } from "@football-app/features";
+import { TeamsListView } from "@football-app/features";
 import { fetchTeams } from "@football-app/shared/client";
-import { ScrollLayout } from "@football-app/shared/ui";
-import { Suspense } from "react";
+import { ResourceListingLayout } from "@football-app/widgets";
 
 export default async function TeamsList({
   searchParams,
@@ -26,14 +25,8 @@ export default async function TeamsList({
   }
 
   return (
-    <>
-      <h2 className="text-xl uppercase font-bold font-mono">Команды</h2>
-      <Suspense>
-        <SearchBox className="mt-3" searchParamName="team" />
-      </Suspense>
-      <ScrollLayout className="overflow-hidden mt-5 flex-grow">
-        <TeamsListView teams={data} />;
-      </ScrollLayout>
-    </>
+    <ResourceListingLayout resourceName="Команды">
+      <TeamsListView teams={data} />;
+    </ResourceListingLayout>
   );
 }
