@@ -2,7 +2,7 @@ export function CalendarHead() {
   return (
     <thead>
       <tr>
-        <th className="p-2 border-r h-10 xl:w-40 lg:w-30 md:w-30 sm:w-20 w-10 xl:text-sm text-xs">
+        <th className="p-2 border-x h-10 xl:w-40 lg:w-30 md:w-30 sm:w-20 w-10 xl:text-sm text-xs">
           <span className="xl:block lg:block md:block sm:block hidden">
             Sunday
           </span>

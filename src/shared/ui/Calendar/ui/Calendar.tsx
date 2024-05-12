@@ -16,7 +16,7 @@ interface CalendarProps extends Pick<HTMLProps<HTMLDivElement>, "className"> {
 
 enum CalendarActions {
   addMonth = "addMonth",
-  subMonth = "addMonth",
+  subMonth = "subMonth",
 }
 
 export function Calendar({
