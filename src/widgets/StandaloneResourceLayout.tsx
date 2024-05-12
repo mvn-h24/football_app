@@ -1,4 +1,3 @@
-import { ContentLayout } from "@football-app/shared/ui";
 import { ReactNode } from "react";
 import Link from "next/link";
 
@@ -14,9 +13,7 @@ export function StandaloneResourceLayout({
           К табло
         </Link>
       </div>
-      <ContentLayout className="overflow-hidden flex flex-col w-full">
-        {children}
-      </ContentLayout>
+      {children}
     </div>
   );
 }

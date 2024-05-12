@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { DashboardResourceLayout } from "@football-app/widgets";
+import { ResourceListingLayout } from "@football-app/widgets";
 
 export default function CompetitionsLayout({
   children,
@@ -7,11 +7,12 @@ export default function CompetitionsLayout({
   children: ReactNode;
 }) {
   return (
-    <DashboardResourceLayout
+    <ResourceListingLayout
+      level={2}
       resourceName="Соревнование"
       searchName="competition"
     >
       {children}
-    </DashboardResourceLayout>
+    </ResourceListingLayout>
   );
 }
