@@ -1,9 +1,9 @@
-import { TeamComposition } from "@football-app/types";
 import { HTMLProps } from "react";
+import { TeamDetail } from "@football-app/entity";
 
 export interface TeamDetailViewProps
   extends Pick<HTMLProps<HTMLDivElement>, "className"> {
-  team: TeamComposition;
+  team: TeamDetail;
 }
 
 export function TeamDetailView({ team, className }: TeamDetailViewProps) {

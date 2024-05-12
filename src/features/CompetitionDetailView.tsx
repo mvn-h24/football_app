@@ -1,4 +1,4 @@
-import { Competition } from "@football-app/types";
+import { Competition } from "@football-app/entity";
 import { HTMLProps } from "react";
 
 export interface CompetitionDetailViewProps

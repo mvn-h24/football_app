@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { CompetitionListItem } from "@football-app/types";
+import { CompetitionListItem } from "@football-app/entity";
 
 interface CompetitionsListProps {
   competitions: CompetitionListItem[];

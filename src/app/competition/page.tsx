@@ -1,7 +1,7 @@
 import Fuse from "fuse.js";
 import { CompetitionsListView } from "@football-app/features";
-import { fetchCompetitions } from "@football-app/shared/client";
 import { ResourceListingLayout } from "@football-app/widgets";
+import { competitionListingGet } from "@football-app/entity";
 
 export default async function CompetitionsList({
   searchParams,
@@ -10,7 +10,7 @@ export default async function CompetitionsList({
     competition?: string;
   };
 }) {
-  const teams = await fetchCompetitions();
+  const teams = await competitionListingGet();
   let data = teams.competitions;
   const searchQuery = searchParams?.competition;
   if (typeof searchQuery === "string") {

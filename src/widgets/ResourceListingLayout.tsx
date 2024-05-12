@@ -1,10 +1,10 @@
 import { CompetitionDetailViewProps, SearchBox } from "@football-app/features";
-import { MatchInfo } from "@football-app/types";
+import { Match } from "@football-app/entity";
 import { ScrollLayout } from "@football-app/shared/ui";
 import { ReactNode, Suspense } from "react";
 
 export interface CompetitionInfoProps extends CompetitionDetailViewProps {
-  matches: Array<MatchInfo>;
+  matches: Array<Match>;
 }
 
 export function ResourceListingLayout({

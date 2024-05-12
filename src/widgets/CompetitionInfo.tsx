@@ -2,12 +2,12 @@ import {
   CompetitionDetailView,
   CompetitionDetailViewProps,
 } from "@football-app/features";
-import { MatchInfo } from "@football-app/types";
+import { Match } from "@football-app/entity";
 import { MatchesCalendar } from "@football-app/widgets/MatchesCalendar";
 import { ScrollLayout } from "@football-app/shared/ui";
 
 export interface CompetitionInfoProps extends CompetitionDetailViewProps {
-  matches: Array<MatchInfo>;
+  matches: Array<Match>;
 }
 
 export function CompetitionInfo({

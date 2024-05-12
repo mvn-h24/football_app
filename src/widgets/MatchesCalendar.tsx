@@ -1,7 +1,7 @@
 "use client";
 
 import { HTMLProps, ReactNode, useMemo } from "react";
-import { MatchInfo } from "@football-app/types";
+import { Match } from "@football-app/entity";
 import { Calendar, CalendarBadge } from "@football-app/shared/ui";
 
 const createDateKey = (date: Date) => {
@@ -12,7 +12,7 @@ interface MatchesCalendarProps
   extends Pick<HTMLProps<HTMLDivElement>, "className"> {
   currentDate?: Date;
   dayRender?: (day: Date) => ReactNode;
-  matches?: MatchInfo[];
+  matches?: Match[];
 }
 export function MatchesCalendar({ matches }: MatchesCalendarProps) {
   const matchMap = useMemo(
@@ -24,7 +24,7 @@ export function MatchesCalendar({ matches }: MatchesCalendarProps) {
         result.set(dateKey, buffer);
 
         return result;
-      }, new Map<string, Array<MatchInfo>>()),
+      }, new Map<string, Array<Match>>()),
     [matches],
   );
 

@@ -1,6 +1,6 @@
 import { TeamsListView } from "@football-app/features";
-import { fetchTeams } from "@football-app/shared/client";
 import Fuse from "fuse.js";
+import { teamListingGet } from "@football-app/entity";
 
 export default async function TeamsList({
   searchParams,
@@ -9,7 +9,7 @@ export default async function TeamsList({
     team?: string;
   };
 }) {
-  const teams = await fetchTeams();
+  const teams = await teamListingGet();
   let data = teams.teams;
 
   const teamsSearchQuery = searchParams?.team;

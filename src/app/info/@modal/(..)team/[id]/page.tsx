@@ -1,6 +1,5 @@
-import { fetchTeam, fetchTeamMatches } from "@football-app/shared/client";
+import { teamGet, TeamMatches, teamMatchesGet } from "@football-app/entity";
 import { TeamDetailModal } from "@football-app/widgets";
-import { MatchesList } from "@football-app/types";
 
 export default async function TeamDetailPage({
   params,
@@ -8,9 +7,9 @@ export default async function TeamDetailPage({
   params: { id: string };
 }) {
   const [team, matches] = await Promise.all([
-    fetchTeam(params.id),
-    fetchTeamMatches(params.id).then(
-      (res) => (res as MatchesList | undefined)?.matches ?? [],
+    teamGet(params.id),
+    teamMatchesGet(params.id).then(
+      (res) => (res as TeamMatches | undefined)?.matches ?? [],
     ),
   ]);
 

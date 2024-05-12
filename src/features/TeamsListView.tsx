@@ -1,9 +1,9 @@
 "use client";
 import Link from "next/link";
-import { TeamsListItem } from "@football-app/types";
+import { TeamSummaryExtended } from "@football-app/entity";
 
 interface TeamsListViewProps {
-  teams: TeamsListItem[];
+  teams: TeamSummaryExtended[];
 }
 
 export function TeamsListView({ teams }: TeamsListViewProps) {
