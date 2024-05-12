@@ -1,7 +1,9 @@
 import Fuse from "fuse.js";
-import { CompetitionsListView } from "@football-app/features";
 import { ResourceListingLayout } from "@football-app/widgets";
-import { competitionListingGet } from "@football-app/entity";
+import {
+  competitionListingGet,
+  CompetitionsListView,
+} from "@football-app/entity";
 
 export default async function CompetitionsList({
   searchParams,
@@ -24,7 +26,7 @@ export default async function CompetitionsList({
   }
 
   return (
-    <ResourceListingLayout resourceName="Соревнования">
+    <ResourceListingLayout resourceName="Соревнования" searchName="competition">
       <CompetitionsListView competitions={data} />
     </ResourceListingLayout>
   );

@@ -1,7 +1,6 @@
 import Fuse from "fuse.js";
-import { TeamsListView } from "@football-app/features";
 import { ResourceListingLayout } from "@football-app/widgets";
-import { teamListingGet } from "@football-app/entity";
+import { teamListingGet, TeamsListView } from "@football-app/entity";
 
 export default async function TeamsList({
   searchParams,
@@ -25,7 +24,7 @@ export default async function TeamsList({
   }
 
   return (
-    <ResourceListingLayout resourceName="Команды">
+    <ResourceListingLayout resourceName="Команды" searchName="team">
       <TeamsListView teams={data} />;
     </ResourceListingLayout>
   );

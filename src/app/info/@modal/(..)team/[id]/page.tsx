@@ -1,5 +1,6 @@
 import { teamGet, TeamMatches, teamMatchesGet } from "@football-app/entity";
-import { TeamDetailModal } from "@football-app/widgets";
+import { TeamInfo } from "@football-app/widgets";
+import { DashboardDetailModal } from "@football-app/features";
 
 export default async function TeamDetailPage({
   params,
@@ -13,5 +14,9 @@ export default async function TeamDetailPage({
     ),
   ]);
 
-  return <TeamDetailModal {...{ team, matches }} />;
+  return (
+    <DashboardDetailModal>
+      <TeamInfo {...{ team, matches }} />
+    </DashboardDetailModal>
+  );
 }

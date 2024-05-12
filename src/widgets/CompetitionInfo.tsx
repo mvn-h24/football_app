@@ -1,9 +1,9 @@
 import {
   CompetitionDetailView,
   CompetitionDetailViewProps,
-} from "@football-app/features";
-import { Match } from "@football-app/entity";
-import { MatchesCalendar } from "@football-app/widgets/MatchesCalendar";
+  Match,
+  MatchesCalendar,
+} from "@football-app/entity";
 import { ScrollLayout } from "@football-app/shared/ui";
 
 export interface CompetitionInfoProps extends CompetitionDetailViewProps {

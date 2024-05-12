@@ -1,6 +1,8 @@
-import { CompetitionsListView } from "@football-app/features";
 import Fuse from "fuse.js";
-import { competitionListingGet } from "@football-app/entity";
+import {
+  competitionListingGet,
+  CompetitionsListView,
+} from "@football-app/entity";
 
 export default async function CompetitionsList({
   searchParams,
@@ -14,7 +16,7 @@ export default async function CompetitionsList({
 
   const competitionSearchQuery = searchParams?.competition;
   if (typeof competitionSearchQuery === "string") {
-    new Fuse(competitions.competitions, {
+    data = new Fuse(data, {
       threshold: 0.2,
       keys: ["name"],
     })

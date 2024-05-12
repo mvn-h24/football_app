@@ -1,12 +1,6 @@
-import { CompetitionDetailViewProps } from "@football-app/features";
-import { Match } from "@football-app/entity";
 import { ContentLayout } from "@football-app/shared/ui";
 import { ReactNode } from "react";
 import Link from "next/link";
-
-export interface CompetitionInfoProps extends CompetitionDetailViewProps {
-  matches: Array<Match>;
-}
 
 export function StandaloneResourceLayout({
   children,

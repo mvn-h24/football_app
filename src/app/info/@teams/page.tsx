@@ -1,6 +1,5 @@
-import { TeamsListView } from "@football-app/features";
 import Fuse from "fuse.js";
-import { teamListingGet } from "@football-app/entity";
+import { teamListingGet, TeamsListView } from "@football-app/entity";
 
 export default async function TeamsList({
   searchParams,

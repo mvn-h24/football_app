@@ -2,12 +2,9 @@
 
 import { Dialog, DialogContent } from "@football-app/shared/ui";
 import { useRouter } from "next/navigation";
-import {
-  CompetitionInfo,
-  CompetitionInfoProps,
-} from "@football-app/widgets/CompetitionInfo";
+import { ReactNode } from "react";
 
-export function CompetitionDetailModal(props: CompetitionInfoProps) {
+export function DashboardDetailModal({ children }: { children?: ReactNode }) {
   const { back } = useRouter();
   const openChangeAction = (status: boolean) => {
     if (!status) {
@@ -17,7 +14,7 @@ export function CompetitionDetailModal(props: CompetitionInfoProps) {
   return (
     <Dialog initialOpen onOpenChange={openChangeAction}>
       <DialogContent className="bg-white w-full max-w-screen-md my-10  p-5 rounded-md shadow-2xl">
-        <CompetitionInfo {...props} />
+        {children}
       </DialogContent>
     </Dialog>
   );

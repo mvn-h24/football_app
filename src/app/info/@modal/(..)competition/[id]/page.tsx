@@ -1,9 +1,10 @@
-import { CompetitionDetailModal } from "@football-app/widgets";
 import {
   competitionGet,
   CompetitionMatchListing,
   competitionMatchListingGet,
 } from "@football-app/entity";
+import { DashboardDetailModal } from "@football-app/features";
+import { CompetitionInfo } from "@football-app/widgets";
 
 export default async function CompetitionDetailPage({
   params,
@@ -17,5 +18,9 @@ export default async function CompetitionDetailPage({
     ),
   ]);
 
-  return <CompetitionDetailModal {...{ competition, matches }} />;
+  return (
+    <DashboardDetailModal>
+      <CompetitionInfo {...{ competition, matches }} />
+    </DashboardDetailModal>
+  );
 }

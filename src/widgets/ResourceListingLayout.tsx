@@ -1,18 +1,15 @@
-import { CompetitionDetailViewProps, SearchBox } from "@football-app/features";
-import { Match } from "@football-app/entity";
+import { SearchBox } from "@football-app/features";
 import { ScrollLayout } from "@football-app/shared/ui";
 import { ReactNode, Suspense } from "react";
-
-export interface CompetitionInfoProps extends CompetitionDetailViewProps {
-  matches: Array<Match>;
-}
 
 export function ResourceListingLayout({
   children,
   resourceName,
+  searchName = "q",
 }: {
   children?: ReactNode;
   resourceName?: string;
+  searchName?: string;
 }) {
   return (
     <>
@@ -22,7 +19,7 @@ export function ResourceListingLayout({
         </h2>
       ) : null}
       <Suspense>
-        <SearchBox className="mt-3" searchParamName="competition" />
+        <SearchBox className="mt-3" searchParamName={searchName} />
       </Suspense>
       <ScrollLayout className="overflow-hidden mt-5 flex-grow">
         {children}
